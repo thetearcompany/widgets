@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Soul Portrait",
+  "name_for_model": "soul_portrait",
+  "description_for_human": "Create beautiful AI-generated portraits of your soul using GPT-4 and DALL-E 3.",
+  "description_for_model": "This plugin allows users to generate artistic soul portraits. It uses GPT-4 to create poetic descriptions and DALL-E 3 to visualize them in different artistic styles.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://api.soulportrait.ai/openapi.yaml"
+  },
+  "logo_url": "https://api.soulportrait.ai/logo.png",
+  "contact_email": "contact@soulportrait.ai",
+  "legal_info_url": "https://api.soulportrait.ai/legal"
+} 

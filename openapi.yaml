@@ -1,0 +1,59 @@
+openapi: 3.0.1
+info:
+  title: Soul Portrait API
+  description: API for generating artistic soul portraits using AI
+  version: 1.0.0
+servers:
+  - url: https://api.soulportrait.ai
+paths:
+  /generate:
+    post:
+      operationId: generateSoulPortrait
+      summary: Generate a soul portrait
+      description: Creates a poetic description and artistic visualization of the user's soul
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - description
+                - style
+              properties:
+                description:
+                  type: string
+                  description: User's self-description (personality, values, beliefs)
+                  example: "I am a creative person who loves nature and art. I believe in harmony and balance in life."
+                style:
+                  type: string
+                  description: Desired artistic style for the portrait
+                  enum: [ethereal, cosmic, nature, geometric, emotional]
+                  example: "ethereal"
+      responses:
+        '200':
+          description: Successfully generated soul portrait
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    description: Poetic description of the soul
+                  imageUrl:
+                    type: string
+                    description: URL to the generated portrait image
+                  style:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      description:
+                        type: string
+        '400':
+          description: Invalid input
+        '500':
+          description: Server error 
